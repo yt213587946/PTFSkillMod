@@ -4,8 +4,6 @@
 
 ---
 
-## 中文
-
 ### 功能
 
 **1. 专精3选2**
@@ -42,8 +40,6 @@ BepInEx/
 运行日志位于 `BepInEx/LogOutput.log`。
 
 ---
-
-## English
 
 ### Features
 

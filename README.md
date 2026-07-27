@@ -10,12 +10,10 @@
 
 **1. 专精3选2**
 原版每个专精层只能选1个技能，改为可保留 **2个**。
-数据自动持久化到文件，重进游戏不丢失。
 
 **2. Boss血量递增**
 每击败一个Boss，后续Boss血量 = 原始HP × (1 + 击败数×2)。
 示例：击败3个后 → 下一个Boss为 **7倍** 血量。
-击杀数自动保存，重进游戏不丢失。
 
 **3. 自动秘宝合成**
 背包中有同种秘宝时，自动免费合成为高级版本。
@@ -50,12 +48,11 @@ BepInEx/
 ### Features
 
 **1. Skill Tree 3→2**
-Pick **2 skills** per layer instead of 1. Selections persist across restarts.
+Pick **2 skills** per layer instead of 1. 
 
 **2. Boss HP Scaling**
 Each kill multiplies subsequent boss HP by `1 + defeated × 2`.
 Example: 3 kills → next boss has **7×** HP.
-Kill count persists across restarts.
 
 **3. Auto Relic Combine**
 2+ identical relics in backpack → auto-combine into forged version for free.

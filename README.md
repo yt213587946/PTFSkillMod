@@ -22,7 +22,7 @@
 ### 安装
 1. 安装 BepInEx 6.0.0 IL2CPP 到游戏目录，版本：BeplnEx-Unity.IL2CPP-win-x64-6.0.0。地址：https://builds.bepinex.dev/projects/bepinex_be
 2. 将BeplnEx文件解压至游戏根目录下，首先运行一次游戏生成所需文件，进入游戏直接退出。
-3. 将 PTFSkillMod.dll`放入 `BepInEx/plugins/`
+3. 将 PTFSkillMod.dll 放入 BepInEx/plugins文件夹下
 4. 启动游戏
 
 ### 文件

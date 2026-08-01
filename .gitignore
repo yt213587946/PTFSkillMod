@@ -1,0 +1,6 @@
+# Build artifacts
+bin/
+obj/
+
+# Local game reference DLLs (copy from <game>\BepInEx\core + \interop)
+refs/

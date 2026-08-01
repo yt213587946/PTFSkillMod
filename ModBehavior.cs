@@ -28,15 +28,20 @@ namespace PTFSkillMod
             try
             {
                 Harmony harmony = new Harmony(GUID);
-                harmony.PatchAll(typeof(RoleSelectFormPatch));
-                harmony.PatchAll(typeof(RoleSkillItemPatch));
-                harmony.PatchAll(typeof(RoleModeDataPatch));
-                harmony.PatchAll(typeof(AutoRelicCombinePatch));
-                harmony.PatchAll(typeof(BossHPScalingPatch));
-                harmony.PatchAll(typeof(PotionDropPatch));
-                RoleSelectFormPatch.LoadFromFile();
-                BossHPScalingPatch.LoadBossCount();
-                ModLog.LogInfo(" SUCCESS: 所有 Harmony 补丁注入成功！专精数据已加载。");
+
+                // ===== 仅启用功能 3 与 4 =====
+                harmony.PatchAll(typeof(AutoRelicCombinePatch)); // 3. 自动秘宝合成
+                harmony.PatchAll(typeof(PotionDropPatch));       // 4. Boss掉落药水
+
+                // ===== 以下功能已禁用（按需取消注释即可开启）=====
+                // harmony.PatchAll(typeof(RoleSelectFormPatch)); // 1. 专精3选2
+                // harmony.PatchAll(typeof(RoleSkillItemPatch));
+                // harmony.PatchAll(typeof(RoleModeDataPatch));
+                // harmony.PatchAll(typeof(BossHPScalingPatch));  // 2. Boss血量递增
+                // RoleSelectFormPatch.LoadFromFile();
+                // BossHPScalingPatch.LoadBossCount();
+
+                ModLog.LogInfo(" SUCCESS: Harmony 补丁注入成功（仅功能 3/4）。");
             }
             catch (Exception ex)
             {

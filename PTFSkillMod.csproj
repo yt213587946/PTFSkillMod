@@ -1,113 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFramework>net48</TargetFramework>
     <ProjectGuid>{C547B626-70DC-434B-8DB5-81877929BC46}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PTFSkillMod</RootNamespace>
     <AssemblyName>PTFSkillMod</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <OutputType>Library</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <!-- Base dir holding core/ and interop/ game DLLs.
+         Defaults to ./refs inside the repo; override at build time with:
+         dotnet build -c Release -p:RefRoot="C:\...\Pass The Fear\BepInEx\" -->
+    <RefRoot>$(MSBuildThisFileDirectory)refs\</RefRoot>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\core\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="BepInEx.Core">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\core\BepInEx.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="BepInEx.Unity.IL2CPP">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Cpp2IL.Core">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\core\Cpp2IL.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Il2CppInterop.Runtime">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Il2CppSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\Il2CppSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Il2CppSystem.Runtime.Serialization">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\Il2CppSystem.Runtime.Serialization.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mirror">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\Mirror.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityFrameworkWogame.Runtime">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\UnityFrameworkWogame.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityGameFramework.Runtime">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\UnityGameFramework.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Wogame.GameMain">
-      <HintPath>E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\Wogame.GameMain.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony"><HintPath>$(RefRoot)core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(RefRoot)interop\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx.Core"><HintPath>$(RefRoot)core\BepInEx.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP"><HintPath>$(RefRoot)core\BepInEx.Unity.IL2CPP.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Cpp2IL.Core"><HintPath>$(RefRoot)core\Cpp2IL.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppInterop.Runtime"><HintPath>$(RefRoot)core\Il2CppInterop.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2Cppmscorlib"><HintPath>$(RefRoot)interop\Il2Cppmscorlib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppSystem"><HintPath>$(RefRoot)interop\Il2CppSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppSystem.Runtime.Serialization"><HintPath>$(RefRoot)interop\Il2CppSystem.Runtime.Serialization.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Mirror"><HintPath>$(RefRoot)interop\Mirror.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(RefRoot)interop\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(RefRoot)interop\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(RefRoot)interop\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(RefRoot)interop\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityFrameworkWogame.Runtime"><HintPath>$(RefRoot)interop\UnityFrameworkWogame.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityGameFramework.Runtime"><HintPath>$(RefRoot)interop\UnityGameFramework.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Wogame.GameMain"><HintPath>$(RefRoot)interop\Wogame.GameMain.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Include="AutoRelicCombinePatch.cs" />
     <Compile Include="BossHPScalingPatch.cs" />
@@ -115,9 +54,4 @@
     <Compile Include="PotionDropPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\UnityEngine.CoreModule.dll" />
-    <Analyzer Include="E:\SteamLibrary\steamapps\common\Pass The Fear\BepInEx\interop\UnityEngine.UI.dll" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

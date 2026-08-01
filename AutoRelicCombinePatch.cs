@@ -228,9 +228,9 @@ namespace PTFSkillMod
                     return false;
                 }
 
-                // 移除基础秘宝
-                relicMode.RemoveRelic(r1, true, true, true);
-                relicMode.RemoveRelic(r2, true, true, true);
+                // 移除基础秘宝（当前游戏版本签名: RemoveRelic(RelicInfo, bool, bool)）
+                relicMode.RemoveRelic(r1, true, true);
+                relicMode.RemoveRelic(r2, true, true);
                 //SkillTreePlugin.ModLog.LogInfo("[AutoRelicCombine] 已移除2个 ID=" + itemId);
 
                 // 创建并添加合成结果
